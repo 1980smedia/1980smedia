@@ -1,6 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- LIVE DATE TIME WEATHER -->
+
+<div id="topbar">
+
+<div id="datetime"></div>
+
+<div id="weather">
+🌤️ Ahmedabad 38°C
+</div>
+
+</div>
+
+<style>
+
+#topbar{
+position:fixed;
+top:85px;
+right:20px;
+display:flex;
+gap:15px;
+z-index:999;
+font-family:'Poppins',sans-serif;
+}
+
+#datetime,
+#weather{
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(10px);
+padding:10px 16px;
+border-radius:12px;
+color:#d4a43c;
+font-weight:600;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+#topbar{
+top:120px;
+right:10px;
+flex-direction:column;
+gap:8px;
+}
+
+#datetime,
+#weather{
+font-size:12px;
+padding:8px 12px;
+}
+
+}
+
+</style>
+
+<script>
+
+function updateDateTime(){
+
+const now = new Date();
+
+const options = {
+weekday:'short',
+year:'numeric',
+month:'short',
+day:'numeric'
+};
+
+const date = now.toLocaleDateString('en-IN',options);
+
+const time = now.toLocaleTimeString('en-IN');
+
+document.getElementById("datetime").innerHTML =
+"📅 " + date + "<br>⏰ " + time;
+
+}
+
+setInterval(updateDateTime,1000);
+
+updateDateTime();
+
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
