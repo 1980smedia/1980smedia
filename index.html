@@ -37,15 +37,23 @@ z-index:1000;
 
 nav h1{
 color:#ff0033;
-font-size:28px;
+font-size:30px;
+}
+
+.nav-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .btn{
 background:#ff0033;
-padding:12px 20px;
+padding:10px 18px;
 color:white;
 text-decoration:none;
 border-radius:5px;
+cursor:pointer;
+border:none;
 }
 
 /* HERO */
@@ -70,44 +78,42 @@ text-align:center;
 }
 
 .hero h2{
-font-size:65px;
+font-size:70px;
 background:linear-gradient(to right,#ff0033,#ff9900);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 margin-top:10px;
 }
 
 /* SECTION */
 .section{
-padding:80px 40px;
-}
-
-.section h2{
-margin-bottom:20px;
-font-size:35px;
-}
-
-/* ROW */
-.row-container{
-display:flex;
-overflow-x:auto;
-gap:15px;
-padding-bottom:10px;
-}
-
-.row-container::-webkit-scrollbar{
+padding:100px 40px 60px;
 display:none;
 }
 
-/* CARD */
+.section.active{
+display:block;
+}
+
+.section h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+/* REELS GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
 .card{
-min-width:280px;
 background:#111;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
 transition:0.4s;
 }
@@ -131,55 +137,12 @@ font-weight:bold;
 
 /* SERVICES */
 .packages{
-display:flex;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
-<!-- REELS SECTION -->
-<div class="section">
 
-<h2>Trending Reels</h2>
-
-<div class="row-container">
-
-<!-- Reel 1 -->
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-road-5170/1080p.mp4" type="video/mp4">
-</video>
-<span>Drone Cinematic</span>
-</div>
-
-<!-- Reel 2 -->
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-driving-on-a-road-1560082897267?download=1080p.mp4" type="video/mp4">
-</video>
-<span>Travel Reel</span>
-</div>
-
-<!-- Reel 3 -->
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-woman-walking-in-the-desert-5176/1080p.mp4" type="video/mp4">
-</video>
-<span>Fashion Reel</span>
-</div>
-
-<!-- Reel 4 -->
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-aerial-shot-of-ocean-waves-1561482193557?download=1080p.mp4" type="video/mp4">
-</video>
-<span>Ocean Drone</span>
-</div>
-
-</div>
-
-</div>
 .package{
-flex:1;
-min-width:250px;
 background:#111;
 padding:20px;
 border-radius:10px;
@@ -209,48 +172,93 @@ padding:15px;
 border-radius:50%;
 font-size:25px;
 text-decoration:none;
+z-index:1000;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h2{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
+
 <h1>1980s Media</h1>
-<a href="https://wa.me/919352674608" class="btn">Book Now</a>
+
+<div class="nav-buttons">
+
+<button class="btn" onclick="showSection('travel')">Travel</button>
+
+<button class="btn" onclick="showSection('culture')">Culture</button>
+
+<button class="btn" onclick="showSection('modeling')">Modeling</button>
+
+<button class="btn" onclick="showSection('drone')">Drone</button>
+
+<button class="btn" onclick="showSection('services')">Services</button>
+
+</div>
+
 </nav>
 
 <!-- HERO -->
 <div class="hero">
 
-<video autoplay muted loop>
+<video autoplay muted loop playsinline>
 <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-road-5170/1080p.mp4">
 </video>
 
 <div class="hero-content">
+
 <h2>1980s Media</h2>
-<p>Vintage Stories × Modern Reels</p>
+
+<p>Netflix Style Reel Portfolio</p>
+
 </div>
 
 </div>
 
 <!-- TRAVEL -->
-<div class="section">
+<div id="travel" class="section active">
 
 <h2>Travel Reels</h2>
 
-<div class="row-container">
+<div class="grid">
 
 <div class="card">
-<video autoplay muted loop>
+<video autoplay muted loop playsinline>
 <source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-road-5170/1080p.mp4">
 </video>
-<span>Mountain Travel</span>
+<span>Mountain Reel</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
 <span>Adventure</span>
+</div>
+
+<div class="card">
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-driving-on-a-road-1560082897267?download=1080p.mp4">
+</video>
+<span>Road Reel</span>
 </div>
 
 <div class="card">
@@ -263,11 +271,11 @@ text-decoration:none;
 </div>
 
 <!-- CULTURE -->
-<div class="section">
+<div id="culture" class="section">
 
 <h2>Culture Shoots</h2>
 
-<div class="row-container">
+<div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
@@ -279,16 +287,26 @@ text-decoration:none;
 <span>Festival Mood</span>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
+<span>Traditional Shoot</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+<span>Beach Culture</span>
 </div>
 
 </div>
 
-<!-- MODEL -->
-<div class="section">
+</div>
 
-<h2>Modeling Shoots</h2>
+<!-- MODELING -->
+<div id="modeling" class="section">
 
-<div class="row-container">
+<h2>Modeling Portfolio</h2>
+
+<div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop">
@@ -297,7 +315,52 @@ text-decoration:none;
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-<span>Creative Look</span>
+<span>Premium Look</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+<span>Studio Shoot</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop">
+<span>Creative Shoot</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- DRONE -->
+<div id="drone" class="section">
+
+<h2>Drone Showcase</h2>
+
+<div class="grid">
+
+<div class="card">
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-aerial-shot-of-ocean-waves-1561482193557?download=1080p.mp4">
+</video>
+<span>Ocean Drone</span>
+</div>
+
+<div class="card">
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-road-5170/1080p.mp4">
+</video>
+<span>Highway Drone</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop">
+<span>Drone Landscape</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+<span>Mountain Aerial</span>
 </div>
 
 </div>
@@ -305,29 +368,29 @@ text-decoration:none;
 </div>
 
 <!-- SERVICES -->
-<div class="section">
+<div id="services" class="section">
 
-<h2>Services</h2>
+<h2>Creative Agency Services</h2>
 
 <div class="packages">
 
 <div class="package">
 <h3>Photography</h3>
-<p>Portrait • Fashion • Culture</p>
+<p>Portrait • Fashion • Travel</p>
 </div>
 
 <div class="package">
 <h3>Cinematography</h3>
-<p>Travel • Wedding • Reels</p>
+<p>Wedding • Reels • Films</p>
 </div>
 
 <div class="package">
-<h3>Drone Shoot</h3>
-<p>Aerial Cinematic Visuals</p>
+<h3>Drone Films</h3>
+<p>Aerial Cinematic Videos</p>
 </div>
 
 <div class="package">
-<h3>Short Film</h3>
+<h3>Short Films</h3>
 <p>Storytelling & Direction</p>
 </div>
 
@@ -336,9 +399,9 @@ text-decoration:none;
 </div>
 
 <!-- CONTACT -->
-<div class="section">
+<div class="section active">
 
-<h2>Start Your Project</h2>
+<h2>Book Your Shoot</h2>
 
 <a href="https://wa.me/919352674608?text=Hi%201980s%20Media,%20I%20want%20a%20shoot" class="btn">
 WhatsApp Booking
@@ -346,13 +409,34 @@ WhatsApp Booking
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-© 2026 1980s Media • Cinematic Agency
+© 2026 1980s Media • Netflix Style Cinematic Agency
 </footer>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/919352674608" class="whatsapp">
 💬
 </a>
+
+<script>
+function showSection(id){
+
+const sections=document.querySelectorAll('.section');
+
+sections.forEach(section=>{
+section.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+
+window.scrollTo({
+top:window.innerHeight,
+behavior:'smooth'
+});
+
+}
+</script>
 
 </body>
 </html>
