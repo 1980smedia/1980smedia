@@ -1,6 +1,6 @@
-# 1980s Media — Final Cinematic Website
+# 1980s Media — Premium Final Portfolio Website
 
-Replace your full `index.html` code with this complete final version.
+Use this full code inside your `index.html` file.
 
 ```html
 <!DOCTYPE html>
@@ -9,7 +9,6 @@ Replace your full `index.html` code with this complete final version.
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1980s Media</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
@@ -47,18 +46,23 @@ color:#ff0033;
 
 .menu{
 display:flex;
-gap:10px;
+gap:12px;
 flex-wrap:wrap;
 }
 
 .menu button{
 background:#ff0033;
 border:none;
-padding:10px 16px;
+padding:10px 18px;
 color:white;
 border-radius:6px;
 cursor:pointer;
 font-weight:600;
+transition:0.3s;
+}
+
+.menu button:hover{
+transform:scale(1.05);
 }
 
 .hero{
@@ -76,7 +80,7 @@ object-fit:cover;
 .overlay{
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.45);
+background:rgba(0,0,0,0.55);
 }
 
 .hero-content{
@@ -90,7 +94,7 @@ z-index:2;
 }
 
 .hero-content h1{
-font-size:72px;
+font-size:75px;
 background:linear-gradient(to right,#ff0033,#ff9900);
 -webkit-background-clip:text;
 color:transparent;
@@ -111,35 +115,35 @@ display:block;
 }
 
 .section-title{
-font-size:42px;
+font-size:40px;
 margin-bottom:25px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:22px;
 }
 
 .card{
 background:#111;
-border-radius:12px;
+border-radius:14px;
 overflow:hidden;
 transition:0.4s;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
+box-shadow:0 0 15px rgba(0,0,0,0.5);
 }
 
 .card:hover{
 transform:scale(1.04);
 }
 
-.card img,
+.card iframe,
 .card video,
-.card iframe{
+.card img{
 width:100%;
 height:360px;
-object-fit:cover;
 border:none;
+object-fit:cover;
 background:black;
 }
 
@@ -149,33 +153,29 @@ padding:14px;
 font-weight:600;
 }
 
-.youtube-box{
-background:#111;
-padding:25px;
-border-radius:12px;
+.socials{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 margin-top:20px;
+justify-content:center;
 }
 
-.youtube-box a{
-color:#ff0033;
-text-decoration:none;
-font-weight:700;
-}
-
-.contact{
-text-align:center;
-padding:80px 20px;
-}
-
-.contact a{
-display:inline-block;
-margin-top:20px;
-background:#25D366;
-padding:14px 28px;
+.socials a{
+background:#ff0033;
+padding:12px 20px;
 border-radius:8px;
 text-decoration:none;
 color:white;
-font-weight:700;
+font-weight:600;
+}
+
+.about{
+background:#111;
+padding:25px;
+border-radius:14px;
+line-height:1.8;
+margin-top:20px;
 }
 
 footer{
@@ -205,7 +205,7 @@ gap:15px;
 }
 
 .hero-content h1{
-font-size:42px;
+font-size:46px;
 }
 
 .hero-content p{
@@ -227,10 +227,9 @@ padding:120px 20px 50px;
 
 <div class="menu">
 <button onclick="showSection('reels')">Reels</button>
-<button onclick="showSection('videos')">Videos</button>
-<button onclick="showSection('spiritual')">Spiritual</button>
-<button onclick="showSection('photography')">Photography</button>
 <button onclick="showSection('youtube')">YouTube</button>
+<button onclick="showSection('portfolio')">Portfolio</button>
+<button onclick="showSection('about')">About</button>
 </div>
 </nav>
 
@@ -244,67 +243,59 @@ padding:120px 20px 50px;
 
 <div class="hero-content">
 <h1>1980s Media</h1>
-<p>Cinematic • Spiritual • Reels • Storytelling</p>
+<p>Cinematic Storytelling</p>
+
+<div class="socials">
+<a href="https://www.instagram.com/kailaschhatot.in" target="_blank">Instagram</a>
+<a href="https://www.youtube.com/@kailaschhatot" target="_blank">YouTube</a>
+<a href="https://wa.me/919352674608" target="_blank">WhatsApp</a>
+</div>
+
 </div>
 
 </div>
 
 <!-- REELS -->
 <div id="reels" class="section active">
-<h2 class="section-title">Instagram Style Reels</h2>
+<h2 class="section-title">Instagram Reels</h2>
+
+<div class="grid">
+
+<iframe src="https://www.instagram.com/kailaschhatot.in/embed" style="display:none"></iframe>
+
+<div class="card"><iframe src="https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1"></iframe><span>Cinematic Reel 1</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1&mute=1"></iframe><span>Cinematic Reel 2</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe><span>Cinematic Reel 3</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1&mute=1"></iframe><span>Cinematic Reel 4</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1"></iframe><span>Cinematic Reel 5</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&mute=1"></iframe><span>Cinematic Reel 6</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/fLexgOxsZu0?autoplay=1&mute=1"></iframe><span>Cinematic Reel 7</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/kXYiU_JCYtU?autoplay=1&mute=1"></iframe><span>Cinematic Reel 8</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/e-ORhEE9VVg?autoplay=1&mute=1"></iframe><span>Cinematic Reel 9</span></div>
+<div class="card"><iframe src="https://www.youtube.com/embed/60ItHLz5WEA?autoplay=1&mute=1"></iframe><span>Cinematic Reel 10</span></div>
+
+</div>
+</div>
+
+<!-- YOUTUBE -->
+<div id="youtube" class="section">
+<h2 class="section-title">YouTube Videos</h2>
 
 <div class="grid">
 
 <div class="card">
-<video autoplay muted loop playsinline controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-driving-on-a-road-through-a-mountain-range-41576-large.mp4" type="video/mp4">
-</video>
-<span>Cinematic Travel Reel</span>
-</div>
-
-<div class="card">
-<video autoplay muted loop playsinline controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4" type="video/mp4">
-</video>
-<span>Ocean Drone Reel</span>
-</div>
-
-<div class="card">
-<video autoplay muted loop playsinline controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4" type="video/mp4">
-</video>
-<span>Night Cinematic Reel</span>
-</div>
-
-<div class="card">
-<video autoplay muted loop playsinline controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
-</video>
-<span>Spiritual Visual Reel</span>
-</div>
-
-</div>
-</div>
-
-<!-- VIDEOS -->
-<div id="videos" class="section">
-<h2 class="section-title">Cinematic Videos</h2>
-
-<div class="grid">
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/videoseries?list=UU" allowfullscreen></iframe>
-<span>YouTube Video Showcase</span>
+<iframe src="https://www.youtube.com/embed/videoseries?list=PL"></iframe>
+<span>Kailas Chhatot YouTube</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-<span>Travel Storytelling</span>
+<span>Travel Cinematic</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
-<span>Adventure Shoot</span>
+<span>Adventure Storytelling</span>
 </div>
 
 <div class="card">
@@ -315,99 +306,74 @@ padding:120px 20px 50px;
 </div>
 </div>
 
-<!-- SPIRITUAL -->
-<div id="spiritual" class="section">
-<h2 class="section-title">Dharmik & Spiritual Visuals</h2>
+<!-- PORTFOLIO -->
+<div id="portfolio" class="section">
+<h2 class="section-title">Premium Portfolio</h2>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
-<span>Temple Culture</span>
+<span>Dharmik Visuals</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop">
-<span>Festival Mood</span>
+<span>Spiritual Culture</span>
 </div>
-
-<div class="card">
-<video autoplay muted loop playsinline controls>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4" type="video/mp4">
-</video>
-<span>Spiritual Atmosphere</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-<span>Traditional Story</span>
-</div>
-
-</div>
-</div>
-
-<!-- PHOTOGRAPHY -->
-<div id="photography" class="section">
-<h2 class="section-title">Photography & Modeling</h2>
-
-<div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop">
-<span>Fashion Portrait</span>
+<span>Modeling Shoot</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-<span>Creative Look</span>
+<span>Portrait Photography</span>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
-<span>Studio Shoot</span>
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
+<span>Travel Reels</span>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop">
-<span>Premium Shoot</span>
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop">
+<span>Drone Cinematics</span>
 </div>
 
 </div>
 </div>
 
-<!-- YOUTUBE -->
-<div id="youtube" class="section">
-<h2 class="section-title">Official Channels</h2>
+<!-- ABOUT -->
+<div id="about" class="section">
+<h2 class="section-title">About</h2>
 
-<div class="youtube-box">
-<h3>YouTube Channel</h3>
+<div class="about">
+<h3>1980s Media</h3>
 <br>
-<a href="https://www.youtube.com/@kailaschhatot" target="_blank">
-https://www.youtube.com/@kailaschhatot
-</a>
-</div>
-
-<div class="youtube-box">
-<h3>Instagram Profile</h3>
+<p>
+Cinematic Storytelling • Reels • Travel Films • Spiritual Visuals • Drone Cinematography
+</p>
 <br>
-<a href="https://www.instagram.com/kailaschhatot.in" target="_blank">
-https://www.instagram.com/kailaschhatot.in
-</a>
+<p>
+Instagram: @kailaschhatot.in
+</p>
+<p>
+YouTube: @kailaschhatot
+</p>
+<p>
+WhatsApp: +91 9352674608
+</p>
+<p>
+Location: Chittorgarh • Udaipur • Rajasthan • All India Travel
+</p>
 </div>
 
-</div>
-
-<!-- CONTACT -->
-<div class="contact">
-<h2>Book Your Shoot</h2>
-
-<a href="https://wa.me/919352674608?text=Hi%201980s%20Media,%20I%20want%20a%20shoot">
-WhatsApp Booking
-</a>
 </div>
 
 <footer>
-© 2026 1980s Media • Cinematic Spiritual Storytelling
+© 2026 1980s Media • Cinematic Storytelling
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919352674608">
@@ -441,9 +407,8 @@ behavior:'smooth'
 
 1. Open `index.html`
 2. Delete old code
-3. Paste this full code
+3. Paste this final code
 4. Commit changes
 5. Wait 1–2 minutes
 
-Your final live website:
-[https://1980smedia.github.io/1980smedia](https://1980smedia.github.io/1980smedia)
+Live Website:
