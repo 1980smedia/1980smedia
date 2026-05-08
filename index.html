@@ -1,17 +1,16 @@
-# 1980s Media — Premium Final Portfolio Website
-
-Use this full code inside your `index.html` file.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>1980s Media</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -20,67 +19,86 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#050505;
+background:#000;
 color:white;
 overflow-x:hidden;
 }
 
+/* NAVBAR */
+
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
+padding:18px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.55);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-font-size:30px;
-font-weight:700;
-color:#ff0033;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+height:55px;
 }
 
 .menu{
 display:flex;
 gap:12px;
-flex-wrap:wrap;
 }
 
 .menu button{
-background:#ff0033;
+background:#d4a43c;
 border:none;
-padding:10px 18px;
-color:white;
-border-radius:6px;
-cursor:pointer;
+padding:10px 20px;
+border-radius:8px;
 font-weight:600;
+cursor:pointer;
 transition:0.3s;
+color:black;
 }
 
 .menu button:hover{
 transform:scale(1.05);
 }
 
+/* HERO */
+
 .hero{
-height:100vh;
 position:relative;
+width:100%;
+height:100vh;
 overflow:hidden;
 }
 
-.hero video{
-width:100%;
-height:100%;
-object-fit:cover;
+.hero iframe{
+position:absolute;
+top:50%;
+left:50%;
+width:177.77vh;
+height:100vh;
+min-width:100%;
+min-height:56.25vw;
+transform:translate(-50%,-50%);
+pointer-events:none;
 }
 
 .overlay{
 position:absolute;
-inset:0;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.55);
+z-index:1;
 }
 
 .hero-content{
@@ -88,124 +106,102 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+z-index:2;
 text-align:center;
 width:90%;
-z-index:2;
 }
 
 .hero-content h1{
-font-size:75px;
-background:linear-gradient(to right,#ff0033,#ff9900);
--webkit-background-clip:text;
-color:transparent;
+font-size:70px;
+color:#d4a43c;
 }
 
 .hero-content p{
 font-size:24px;
-margin-top:15px;
+margin-top:10px;
 }
+
+/* SECTIONS */
 
 .section{
 display:none;
-padding:120px 40px 70px;
+padding:130px 40px 60px;
+min-height:100vh;
+background:#050505;
 }
 
 .active{
 display:block;
 }
 
-.section-title{
-font-size:40px;
+.section h2{
+font-size:42px;
 margin-bottom:25px;
+color:#d4a43c;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-}
-
-.card{
+.about-box{
+max-width:1000px;
+line-height:1.9;
+font-size:18px;
 background:#111;
-border-radius:14px;
-overflow:hidden;
-transition:0.4s;
-box-shadow:0 0 15px rgba(0,0,0,0.5);
+padding:35px;
+border-radius:16px;
 }
 
-.card:hover{
-transform:scale(1.04);
-}
+/* CONTACT */
 
-.card iframe,
-.card video,
-.card img{
-width:100%;
-height:360px;
-border:none;
-object-fit:cover;
-background:black;
-}
-
-.card span{
-display:block;
-padding:14px;
-font-weight:600;
-}
-
-.socials{
+.contact-links{
 display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-top:20px;
-justify-content:center;
+flex-direction:column;
+gap:22px;
+margin-top:30px;
 }
 
-.socials a{
-background:#ff0033;
-padding:12px 20px;
-border-radius:8px;
+.contact-links a{
 text-decoration:none;
 color:white;
-font-weight:600;
+font-size:20px;
+background:#111;
+padding:18px 22px;
+border-radius:12px;
+transition:0.3s;
+display:flex;
+align-items:center;
+gap:15px;
 }
 
-.about{
-background:#111;
-padding:25px;
-border-radius:14px;
-line-height:1.8;
-margin-top:20px;
+.contact-links a:hover{
+background:#1b1b1b;
+transform:translateY(-2px);
 }
+
+.contact-links img{
+width:32px;
+height:32px;
+}
+
+/* FOOTER */
 
 footer{
 background:black;
-padding:25px;
+padding:22px;
 text-align:center;
-margin-top:50px;
+font-size:15px;
 }
 
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-padding:16px;
-border-radius:50%;
-font-size:26px;
-text-decoration:none;
-z-index:1000;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
 nav{
 flex-direction:column;
 gap:15px;
+padding:15px;
 }
 
 .hero-content h1{
-font-size:46px;
+font-size:42px;
 }
 
 .hero-content p{
@@ -216,199 +212,183 @@ font-size:18px;
 padding:120px 20px 50px;
 }
 
+.section h2{
+font-size:30px;
 }
+
+.about-box{
+font-size:16px;
+padding:22px;
+}
+
+.contact-links a{
+font-size:16px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
-<div class="logo">1980s Media</div>
+
+<div class="logo">
+
+<img src="https://i.imgur.com/ZK7YQbH.png">
+
+</div>
 
 <div class="menu">
-<button onclick="showSection('reels')">Reels</button>
-<button onclick="showSection('youtube')">YouTube</button>
-<button onclick="showSection('portfolio')">Portfolio</button>
+
+<button onclick="showSection('home')">Home</button>
 <button onclick="showSection('about')">About</button>
+<button onclick="showSection('contact')">Contact</button>
+
 </div>
+
 </nav>
 
-<div class="hero">
+<!-- HOME -->
 
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4" type="video/mp4">
-</video>
+<div id="home" class="hero active">
+
+<iframe
+src="https://www.youtube.com/embed/v2P6f8OrSEs?autoplay=1&mute=1&loop=1&playlist=v2P6f8OrSEs&controls=0&showinfo=0&modestbranding=1"
+frameborder="0"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
 
 <div class="overlay"></div>
 
 <div class="hero-content">
+
 <h1>1980s Media</h1>
-<p>Cinematic Storytelling</p>
 
-<div class="socials">
-<a href="https://www.instagram.com/kailaschhatot.in" target="_blank">Instagram</a>
-<a href="https://www.youtube.com/@kailaschhatot" target="_blank">YouTube</a>
-<a href="https://wa.me/919352674608" target="_blank">WhatsApp</a>
-</div>
+<p>🎬 Cinematic Spiritual Storytelling</p>
 
 </div>
 
-</div>
-
-<!-- REELS -->
-<div id="reels" class="section active">
-<h2 class="section-title">Instagram Reels</h2>
-
-<div class="grid">
-
-<iframe src="https://www.instagram.com/kailaschhatot.in/embed" style="display:none"></iframe>
-
-<div class="card"><iframe src="https://www.youtube.com/embed/ysz5S6PUM-U?autoplay=1&mute=1"></iframe><span>Cinematic Reel 1</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=1&mute=1"></iframe><span>Cinematic Reel 2</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"></iframe><span>Cinematic Reel 3</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1&mute=1"></iframe><span>Cinematic Reel 4</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1"></iframe><span>Cinematic Reel 5</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&mute=1"></iframe><span>Cinematic Reel 6</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/fLexgOxsZu0?autoplay=1&mute=1"></iframe><span>Cinematic Reel 7</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/kXYiU_JCYtU?autoplay=1&mute=1"></iframe><span>Cinematic Reel 8</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/e-ORhEE9VVg?autoplay=1&mute=1"></iframe><span>Cinematic Reel 9</span></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/60ItHLz5WEA?autoplay=1&mute=1"></iframe><span>Cinematic Reel 10</span></div>
-
-</div>
-</div>
-
-<!-- YOUTUBE -->
-<div id="youtube" class="section">
-<h2 class="section-title">YouTube Videos</h2>
-
-<div class="grid">
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/videoseries?list=PL"></iframe>
-<span>Kailas Chhatot YouTube</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-<span>Travel Cinematic</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
-<span>Adventure Storytelling</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
-<span>Drone Landscape</span>
-</div>
-
-</div>
-</div>
-
-<!-- PORTFOLIO -->
-<div id="portfolio" class="section">
-<h2 class="section-title">Premium Portfolio</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
-<span>Dharmik Visuals</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1200&auto=format&fit=crop">
-<span>Spiritual Culture</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop">
-<span>Modeling Shoot</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-<span>Portrait Photography</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
-<span>Travel Reels</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop">
-<span>Drone Cinematics</span>
-</div>
-
-</div>
 </div>
 
 <!-- ABOUT -->
-<div id="about" class="section">
-<h2 class="section-title">About</h2>
 
-<div class="about">
-<h3>1980s Media</h3>
-<br>
+<div id="about" class="section">
+
+<h2>About</h2>
+
+<div class="about-box">
+
 <p>
-Cinematic Storytelling • Reels • Travel Films • Spiritual Visuals • Drone Cinematography
+
+1980s Media  
+🎬 Cinematic Spiritual Storytelling
+
+<br><br>
+
+We specialize in spiritual and devotional content creation including:
+
+<br><br>
+
+✨ Dharmik Festivals & Events  
+<br>
+🎥 Spiritual Reels & Series  
+<br>
+📿 Temple & Sanatan Culture Shoots  
+<br>
+📱 Social Media Management  
+<br>
+🌍 Influencer Management  
+
+<br><br>
+
+If you are a spiritual creator, devotional influencer, temple trust, kathavachak, bhajan artist, or devotional brand and want to present your content in a cinematic and professional way, connect with us.
+
+<br><br>
+
+🙏 Thank You
+
 </p>
-<br>
-<p>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div id="contact" class="section">
+
+<h2>Contact</h2>
+
+<div class="contact-links">
+
+<a href="https://www.instagram.com/kailaschhatot.in" target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+
 Instagram: @kailaschhatot.in
-</p>
-<p>
+
+</a>
+
+<a href="https://www.youtube.com/@kailaschhatot" target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+
 YouTube: @kailaschhatot
-</p>
-<p>
+
+</a>
+
+<a href="https://wa.me/919352674608" target="_blank">
+
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+
 WhatsApp: +91 9352674608
-</p>
-<p>
-Location: Chittorgarh • Udaipur • Rajasthan • All India Travel
-</p>
+
+</a>
+
+<a href="#">
+
+<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+
+Location: Sardar Nagar Ahmedabad Gujrat 382475
+
+</a>
+
 </div>
 
 </div>
 
 <footer>
-© 2026 1980s Media • Cinematic Storytelling
+
+© 2026 1980s Media • Cinematic Spiritual Storytelling
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919352674608">
-💬
-</a>
-
 <script>
+
 function showSection(id){
 
-const sections=document.querySelectorAll('.section');
+document.getElementById('home').style.display='none';
+document.getElementById('about').style.display='none';
+document.getElementById('contact').style.display='none';
 
-sections.forEach(section=>{
-section.classList.remove('active');
-});
-
-document.getElementById(id).classList.add('active');
-
-window.scrollTo({
-top:window.innerHeight,
-behavior:'smooth'
-});
+if(id==='home'){
+document.getElementById('home').style.display='block';
+window.scrollTo({top:0,behavior:'smooth'});
+}
+else{
+document.getElementById(id).style.display='block';
+window.scrollTo({top:0,behavior:'smooth'});
+}
 
 }
+
 </script>
 
 </body>
 </html>
-```
-
-## Final Steps
-
-1. Open `index.html`
-2. Delete old code
-3. Paste this final code
-4. Commit changes
-5. Wait 1–2 minutes
-
-Live Website:
