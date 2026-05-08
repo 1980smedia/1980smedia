@@ -49,6 +49,12 @@ gap:15px;
 
 .logo img{
 height:55px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.logo img:hover{
+transform:scale(1.1);
 }
 
 .menu{
@@ -69,6 +75,46 @@ color:black;
 
 .menu button:hover{
 transform:scale(1.05);
+}
+
+/* DATE TIME WIDGET */
+
+.datetime-widget{
+position:fixed;
+top:100px;
+right:40px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-radius:12px;
+padding:20px;
+border:1px solid rgba(255,255,255,0.2);
+min-width:250px;
+z-index:999;
+}
+
+.datetime-widget h3{
+font-size:14px;
+opacity:0.8;
+margin-bottom:10px;
+}
+
+.date-display{
+font-size:18px;
+font-weight:600;
+margin-bottom:8px;
+}
+
+.time-display{
+font-size:28px;
+font-weight:700;
+color:#FFD700;
+font-family:monospace;
+}
+
+.day-display{
+font-size:14px;
+opacity:0.9;
+margin-top:8px;
 }
 
 /* CONTAINER */
@@ -281,6 +327,11 @@ gap:15px;
 padding:15px;
 }
 
+.datetime-widget{
+position:static;
+margin:15px 0;
+}
+
 .container{
 padding:150px 20px 80px;
 }
@@ -309,7 +360,7 @@ grid-template-columns:1fr;
 
 <nav>
 
-<div class="logo">
+<div class="logo" onclick="goHome()" title="Go to Home">
 
 <img src="https://i.imgur.com/ZK7YQbH.png" alt="1980s Media">
 
@@ -318,12 +369,26 @@ grid-template-columns:1fr;
 <div class="menu">
 
 <button onclick="showSection('home')">Home</button>
-<button onclick="showSection('weather')">Weather</button>
+<button onclick="showSection('about')">About</button>
 <button onclick="showSection('contact')">Contact</button>
 
 </div>
 
 </nav>
+
+<!-- DATE TIME WIDGET -->
+
+<div class="datetime-widget">
+
+<h3>📅 Current Date & Time</h3>
+
+<div class="date-display" id="dateDisplay">Loading...</div>
+
+<div class="time-display" id="timeDisplay">00:00:00</div>
+
+<div class="day-display" id="dayDisplay">Loading...</div>
+
+</div>
 
 <!-- CONTAINER -->
 
@@ -387,6 +452,31 @@ onkeypress="handleEnter(event)">
 // API Key from Open-Meteo (Free, no API key needed!)
 const WEATHER_API = 'https://geocoding-api.open-meteo.com/v1/search';
 const FORECAST_API = 'https://api.open-meteo.com/v1/forecast';
+
+// Update date and time every second
+function updateDateTime(){
+const now = new Date();
+
+// Format date
+const options = {year:'numeric', month:'long', day:'numeric'};
+const dateStr = now.toLocaleDateString('en-US', options);
+document.getElementById('dateDisplay').textContent = dateStr;
+
+// Format time (HH:MM:SS)
+const hours = String(now.getHours()).padStart(2,'0');
+const minutes = String(now.getMinutes()).padStart(2,'0');
+const seconds = String(now.getSeconds()).padStart(2,'0');
+document.getElementById('timeDisplay').textContent = `${hours}:${minutes}:${seconds}`;
+
+// Format day
+const dayOptions = {weekday:'long'};
+const dayStr = now.toLocaleDateString('en-US', dayOptions);
+document.getElementById('dayDisplay').textContent = dayStr;
+}
+
+// Update time every second
+setInterval(updateDateTime, 1000);
+updateDateTime(); // Initial call
 
 // Hide error message
 function hideError(){
@@ -576,12 +666,12 @@ searchWeather();
 }
 }
 
-// Initialize with default city
-window.addEventListener('load', () => {
-document.getElementById('cityInput').value = 'Ahmedabad';
-searchWeather();
-});
+// Go to home
+function goHome(){
+window.location.href = 'index.html';
+}
 
+// Show section
 function showSection(id){
 if(id === 'home'){
 window.location.href = 'index.html';
@@ -589,6 +679,12 @@ window.location.href = 'index.html';
 window.location.href = 'index.html#contact';
 }
 }
+
+// Initialize with default city
+window.addEventListener('load', () => {
+document.getElementById('cityInput').value = 'Ahmedabad';
+searchWeather();
+});
 
 </script>
 
