@@ -1,3 +1,8 @@
+# 1980s Media — Final Cinematic Website
+
+Replace your full `index.html` code with this complete final version.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -21,8 +25,6 @@ background:#050505;
 color:white;
 overflow-x:hidden;
 }
-
-/* NAVBAR */
 
 nav{
 position:fixed;
@@ -45,26 +47,19 @@ color:#ff0033;
 
 .menu{
 display:flex;
-gap:12px;
+gap:10px;
 flex-wrap:wrap;
 }
 
 .menu button{
 background:#ff0033;
 border:none;
-padding:10px 18px;
+padding:10px 16px;
 color:white;
 border-radius:6px;
 cursor:pointer;
 font-weight:600;
-transition:0.3s;
 }
-
-.menu button:hover{
-transform:scale(1.08);
-}
-
-/* HERO */
 
 .hero{
 height:100vh;
@@ -90,12 +85,12 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
-z-index:2;
 width:90%;
+z-index:2;
 }
 
 .hero-content h1{
-font-size:75px;
+font-size:72px;
 background:linear-gradient(to right,#ff0033,#ff9900);
 -webkit-background-clip:text;
 color:transparent;
@@ -105,8 +100,6 @@ color:transparent;
 font-size:24px;
 margin-top:15px;
 }
-
-/* SECTION */
 
 .section{
 display:none;
@@ -119,18 +112,14 @@ display:block;
 
 .section-title{
 font-size:42px;
-margin-bottom:30px;
+margin-bottom:25px;
 }
-
-/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:22px;
 }
-
-/* CARD */
 
 .card{
 background:#111;
@@ -141,14 +130,16 @@ box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:scale(1.04);
 }
 
 .card img,
-.card video{
+.card video,
+.card iframe{
 width:100%;
 height:360px;
 object-fit:cover;
+border:none;
 background:black;
 }
 
@@ -158,27 +149,18 @@ padding:14px;
 font-weight:600;
 }
 
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.service{
+.youtube-box{
 background:#111;
 padding:25px;
-border-radius:10px;
-border:1px solid #222;
+border-radius:12px;
+margin-top:20px;
 }
 
-.service h3{
+.youtube-box a{
 color:#ff0033;
-margin-bottom:10px;
+text-decoration:none;
+font-weight:700;
 }
-
-/* CONTACT */
 
 .contact{
 text-align:center;
@@ -196,16 +178,12 @@ color:white;
 font-weight:700;
 }
 
-/* FOOTER */
-
 footer{
 background:black;
 padding:25px;
 text-align:center;
 margin-top:50px;
 }
-
-/* WHATSAPP FLOAT */
 
 .whatsapp{
 position:fixed;
@@ -219,8 +197,6 @@ text-decoration:none;
 z-index:1000;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
 
 nav{
@@ -229,7 +205,7 @@ gap:15px;
 }
 
 .hero-content h1{
-font-size:45px;
+font-size:42px;
 }
 
 .hero-content p{
@@ -241,74 +217,89 @@ padding:120px 20px 50px;
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
-
 <div class="logo">1980s Media</div>
 
 <div class="menu">
-
-<button onclick="showSection('travel')">Travel</button>
-
-<button onclick="showSection('culture')">Culture</button>
-
-<button onclick="showSection('modeling')">Modeling</button>
-
-<button onclick="showSection('drone')">Drone</button>
-
-<button onclick="showSection('services')">Services</button>
-
+<button onclick="showSection('reels')">Reels</button>
+<button onclick="showSection('videos')">Videos</button>
+<button onclick="showSection('spiritual')">Spiritual</button>
+<button onclick="showSection('photography')">Photography</button>
+<button onclick="showSection('youtube')">YouTube</button>
 </div>
-
 </nav>
-
-<!-- HERO -->
 
 <div class="hero">
 
 <video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4" type="video/mp4">
+<source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
 <div class="hero-content">
-
 <h1>1980s Media</h1>
-
-<p>Netflix Style Reel Portfolio & Cinematic Agency</p>
-
+<p>Cinematic • Spiritual • Reels • Storytelling</p>
 </div>
 
 </div>
 
-<!-- TRAVEL -->
-
-<div id="travel" class="section active">
-
-<h2 class="section-title">Travel Reels</h2>
+<!-- REELS -->
+<div id="reels" class="section active">
+<h2 class="section-title">Instagram Style Reels</h2>
 
 <div class="grid">
 
 <div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-driving-on-a-road-through-a-mountain-range-41576-large.mp4">
+<video autoplay muted loop playsinline controls>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-driving-on-a-road-through-a-mountain-range-41576-large.mp4" type="video/mp4">
 </video>
-<span>Mountain Drive</span>
+<span>Cinematic Travel Reel</span>
 </div>
 
 <div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4">
+<video autoplay muted loop playsinline controls>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4" type="video/mp4">
 </video>
-<span>Ocean Drone</span>
+<span>Ocean Drone Reel</span>
+</div>
+
+<div class="card">
+<video autoplay muted loop playsinline controls>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4" type="video/mp4">
+</video>
+<span>Night Cinematic Reel</span>
+</div>
+
+<div class="card">
+<video autoplay muted loop playsinline controls>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
+</video>
+<span>Spiritual Visual Reel</span>
+</div>
+
+</div>
+</div>
+
+<!-- VIDEOS -->
+<div id="videos" class="section">
+<h2 class="section-title">Cinematic Videos</h2>
+
+<div class="grid">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/videoseries?list=UU" allowfullscreen></iframe>
+<span>YouTube Video Showcase</span>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+<span>Travel Storytelling</span>
 </div>
 
 <div class="card">
@@ -317,37 +308,22 @@ padding:120px 20px 50px;
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-<span>Nature Cinematic</span>
-</div>
-
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4">
-</video>
-<span>Night Reel</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
-<span>Beach Travel</span>
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
+<span>Drone Landscape</span>
 </div>
 
 </div>
-
 </div>
 
-<!-- CULTURE -->
-
-<div id="culture" class="section">
-
-<h2 class="section-title">Culture Shoots</h2>
+<!-- SPIRITUAL -->
+<div id="spiritual" class="section">
+<h2 class="section-title">Dharmik & Spiritual Visuals</h2>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop">
-<span>Indian Culture</span>
+<span>Temple Culture</span>
 </div>
 
 <div class="card">
@@ -356,24 +332,23 @@ padding:120px 20px 50px;
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-<span>Traditional Shoot</span>
+<video autoplay muted loop playsinline controls>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4" type="video/mp4">
+</video>
+<span>Spiritual Atmosphere</span>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop">
-<span>Culture Mood</span>
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
+<span>Traditional Story</span>
 </div>
 
 </div>
-
 </div>
 
-<!-- MODELING -->
-
-<div id="modeling" class="section">
-
-<h2 class="section-title">Modeling Portfolio</h2>
+<!-- PHOTOGRAPHY -->
+<div id="photography" class="section">
+<h2 class="section-title">Photography & Modeling</h2>
 
 <div class="grid">
 
@@ -384,123 +359,62 @@ padding:120px 20px 50px;
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
-<span>Premium Shoot</span>
+<span>Creative Look</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
-<span>Studio Look</span>
+<span>Studio Shoot</span>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop">
-<span>Creative Fashion</span>
+<span>Premium Shoot</span>
 </div>
 
 </div>
-
 </div>
 
-<!-- DRONE -->
+<!-- YOUTUBE -->
+<div id="youtube" class="section">
+<h2 class="section-title">Official Channels</h2>
 
-<div id="drone" class="section">
-
-<h2 class="section-title">Drone Showcase</h2>
-
-<div class="grid">
-
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-city-traffic-at-night-11-large.mp4">
-</video>
-<span>City Drone</span>
+<div class="youtube-box">
+<h3>YouTube Channel</h3>
+<br>
+<a href="https://www.youtube.com/@kailaschhatot" target="_blank">
+https://www.youtube.com/@kailaschhatot
+</a>
 </div>
 
-<div class="card">
-<video autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-clouds-and-blue-sky-2408-large.mp4">
-</video>
-<span>Sky Drone</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop">
-<span>Mountain Aerial</span>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop">
-<span>Drone Landscape</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- SERVICES -->
-
-<div id="services" class="section">
-
-<h2 class="section-title">Creative Agency Services</h2>
-
-<div class="services">
-
-<div class="service">
-<h3>Photography</h3>
-<p>Fashion • Portrait • Lifestyle</p>
-</div>
-
-<div class="service">
-<h3>Cinematography</h3>
-<p>Travel • Wedding • Reels</p>
-</div>
-
-<div class="service">
-<h3>Drone Films</h3>
-<p>Aerial Cinematic Visuals</p>
-</div>
-
-<div class="service">
-<h3>Short Films</h3>
-<p>Storytelling & Direction</p>
-</div>
-
+<div class="youtube-box">
+<h3>Instagram Profile</h3>
+<br>
+<a href="https://www.instagram.com/kailaschhatot.in" target="_blank">
+https://www.instagram.com/kailaschhatot.in
+</a>
 </div>
 
 </div>
 
 <!-- CONTACT -->
-
 <div class="contact">
-
-<h2>Start Your Project</h2>
+<h2>Book Your Shoot</h2>
 
 <a href="https://wa.me/919352674608?text=Hi%201980s%20Media,%20I%20want%20a%20shoot">
 WhatsApp Booking
 </a>
-
 </div>
 
-<!-- FOOTER -->
-
 <footer>
-
-© 2026 1980s Media • Netflix Style Cinematic Agency
-
+© 2026 1980s Media • Cinematic Spiritual Storytelling
 </footer>
 
-<!-- WHATSAPP -->
-
 <a class="whatsapp" href="https://wa.me/919352674608">
-
 💬
-
 </a>
 
-<!-- SCRIPT -->
-
 <script>
-
 function showSection(id){
 
 const sections=document.querySelectorAll('.section');
@@ -517,8 +431,19 @@ behavior:'smooth'
 });
 
 }
-
 </script>
 
 </body>
 </html>
+```
+
+## Final Steps
+
+1. Open `index.html`
+2. Delete old code
+3. Paste this full code
+4. Commit changes
+5. Wait 1–2 minutes
+
+Your final live website:
+[https://1980smedia.github.io/1980smedia](https://1980smedia.github.io/1980smedia)
